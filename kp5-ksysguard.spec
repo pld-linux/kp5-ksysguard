@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.11.2
+%define		kdeplasmaver	5.14.4
 %define		qtver		5.5.1
 %define		kpname		ksysguard
 Summary:	ksysguard
 Name:		kp5-%{kpname}
-Version:	5.11.2
+Version:	5.14.4
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	9712b7faba43d2c227ea2d73b3ac2e09
+# Source0-md5:	abc6602d3f0d986a07d8b00684599ca9
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -23,7 +23,7 @@ BuildRequires:	kf5-ki18n-devel
 BuildRequires:	kf5-kiconthemes-devel
 BuildRequires:	kf5-kitemviews-devel
 BuildRequires:	kf5-knewstuff-devel
-BuildRequires:	kp5-libksysguard-devel
+BuildRequires:	kp5-libksysguard-devel >= %{kdeplasmaver}
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
@@ -79,3 +79,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/ksysguard/SystemLoad2.sgrd
 %dir %{_datadir}/kxmlgui5/ksysguard
 %{_datadir}/kxmlgui5/ksysguard/ksysguardui.rc
+%{_datadir}/metainfo/org.kde.ksysguard.appdata.xml
