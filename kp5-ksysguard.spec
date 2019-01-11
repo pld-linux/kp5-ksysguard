@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.14.4
-%define		qtver		5.5.1
+%define		kdeplasmaver	5.14.5
+%define		qtver		5.9.0
 %define		kpname		ksysguard
 Summary:	ksysguard
 Name:		kp5-%{kpname}
-Version:	5.14.4
+Version:	5.14.5
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	abc6602d3f0d986a07d8b00684599ca9
+# Source0-md5:	2c1edb69d00f2fa2c9d782cef08254c9
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -31,7 +31,10 @@ BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-ksysguard
+KSysGuard is the Plasma Task and Performance Monitor. It features a
+client/server architecture that allows monitoring of local as well as
+remote hosts. The graphical front end uses so-called sensors to
+retrieve the information it displays.
 
 %prep
 %setup -q -n %{kpname}-%{version}
