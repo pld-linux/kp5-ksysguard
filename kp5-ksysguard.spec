@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.15.3
+%define		kdeplasmaver	5.21.2
 %define		qtver		5.9.0
 %define		kpname		ksysguard
 Summary:	ksysguard
 Name:		kp5-%{kpname}
-Version:	5.15.3
+Version:	5.21.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	39a526781799088e251305f17945e784
+# Source0-md5:	41611044c4c1827e3a225c617bdb8693
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -45,6 +45,7 @@ install -d build
 cd build
 %cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	..
 %ninja_build
 
@@ -64,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ksysguard
 %{_sysconfdir}/ksysguarddrc
-/etc/xdg/ksysguard.knsrc
+%{_datadir}/knsrcfiles/ksysguard.knsrc
 %attr(755,root,root) %{_bindir}/ksysguardd
 %attr(755,root,root) %{_libdir}/libkdeinit5_ksysguard.so
 %{_desktopdir}/org.kde.ksysguard.desktop
@@ -83,3 +84,20 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kxmlgui5/ksysguard
 %{_datadir}/kxmlgui5/ksysguard/ksysguardui.rc
 %{_datadir}/metainfo/org.kde.ksysguard.appdata.xml
+%attr(755,root,root) %{_bindir}/kstatsviewer
+%attr(755,root,root) %{_bindir}/ksystemstats
+%attr(755,root,root) %{_libdir}/libksgrdbackend.so
+%dir %{_libdir}/qt5/plugins/ksysguard
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_globalplugin_network.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_ksgrd.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_cpu.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_disk.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_gpu.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_memory.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_osinfo.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_power.so
+%dir %{_libdir}/qt5/plugins/ksysguard/process
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/process/ksysguard_plugin_nvidia.so
+%{_datadir}/dbus-1/services/org.kde.ksystemstats.service
+%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/process/ksysguard_plugin_network.so
+%attr(755,root,root) %{_prefix}/libexec/ksysguard/ksgrd_network_helper
