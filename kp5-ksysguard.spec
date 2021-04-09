@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.21.3
+%define		kdeplasmaver	5.21.4
 %define		qtver		5.9.0
 %define		kpname		ksysguard
 Summary:	ksysguard
 Name:		kp5-%{kpname}
-Version:	5.21.3
-Release:	2
+Version:	5.21.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	1b333cc5b54dda31aec800b2fecc57b8
+# Source0-md5:	6c7a618d7710e5dda9311890e2785eed
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
