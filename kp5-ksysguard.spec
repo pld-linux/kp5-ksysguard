@@ -68,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/ksysguarddrc
 %{_datadir}/knsrcfiles/ksysguard.knsrc
 %attr(755,root,root) %{_bindir}/ksysguardd
-%attr(755,root,root) %{_libdir}/libkdeinit5_ksysguard.so
 %{_desktopdir}/org.kde.ksysguard.desktop
 %{_iconsdir}/hicolor/16x16/apps/computer.png
 %{_iconsdir}/hicolor/16x16/apps/daemon.png
@@ -85,21 +84,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kxmlgui5/ksysguard
 %{_datadir}/kxmlgui5/ksysguard/ksysguardui.rc
 %{_datadir}/metainfo/org.kde.ksysguard.appdata.xml
-%attr(755,root,root) %{_bindir}/kstatsviewer
-%attr(755,root,root) %{_bindir}/ksystemstats
-%attr(755,root,root) %{_libdir}/libksgrdbackend.so
-%dir %{_libdir}/qt5/plugins/ksysguard
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_globalplugin_network.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_ksgrd.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_cpu.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_disk.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_gpu.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_memory.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_osinfo.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/ksysguard_plugin_power.so
-%dir %{_libdir}/qt5/plugins/ksysguard/process
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/process/ksysguard_plugin_nvidia.so
-%{_datadir}/dbus-1/services/org.kde.ksystemstats.service
-%attr(755,root,root) %{_libdir}/qt5/plugins/ksysguard/process/ksysguard_plugin_network.so
-%dir %{_libexecdir}/ksysguard
-%attr(755,root,root) %{_libexecdir}/ksysguard/ksgrd_network_helper
