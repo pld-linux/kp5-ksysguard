@@ -7,7 +7,8 @@ Version:	5.22.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+#Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+Source0:	https://download.kde.org/stable/ksysguard/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	df63e8e8c915178439af4809339cef99
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
